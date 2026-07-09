@@ -1,26 +1,26 @@
-## Education
+## 教育背景
 
-**The University of Example**, PhD in Natural Science, *2025 - Present*
-- Research focus: Mathematical Principles of Natural Philosophy
-- Supervisor: Prof. Advisor One and Dr. Advisor Two
+**某某大学**，自然科学博士，*2025 - 至今*
+- 研究方向：自然哲学的数学原理
+- 导师：导师甲教授、导师乙博士
 
-**The University of Example**, BSc in Natural Science, *2021 - 2025*
-- Graduated with First Class Honours
+**某某大学**，自然科学学士，*2021 - 2025*
+- 一等荣誉毕业
 
-## Experience
+## 经历
 
-**Example Role**
-Company/Institution
+**示例岗位**
+公司/机构
 *2023 - 2024*
-- Description of key responsibilities and achievements.
-- Utilized skills to solve problems.
+- 负责关键工作并完成目标。
+- 运用专业技能解决实际问题。
 
-## Skills
+## 技能
 
-- **Programming:** Python, C++, MATLAB, LaTeX
-- **Data Analysis:** Pandas, NumPy, SciPy
-- **Languages:** English (Native), French (Fluent)
+- **编程：** Python, C++, MATLAB, LaTeX
+- **数据分析：** Pandas, NumPy, SciPy
+- **语言：** 中文（母语）, 英文（流利）
 
-## Awards & Honors
+## 奖项与荣誉
 
-- **First Prize in Example Competition** - Committee of Example (*2024*)
+- **示例竞赛一等奖** - 某某评审委员会 (*2024*)

@@ -1,29 +1,28 @@
 type = "about"
-title = "About"
+title = "关于我"
 
 [profile]
 research_interests = [
-  "Computational Physics",
-  "Mathematical Principles",
-  "Proof of Theorems"
+  "自主无人系统协同控制",
+  "先进控制理论",
+  "强化学习"
 ]
 
 [[sections]]
 id = "about"
 type = "markdown"
 source = "bio.md"
-title = "About"
+title = "关于我"
 
 [[sections]]
 id = "featured_publications"
 type = "publications"
-title = "Selected Publications"
+title = "代表性论文"
 filter = "selected"
 limit = 5
 
 [[sections]]
 id = "news"
 type = "list"
-title = "News"
+title = "动态"
 source = "news.toml"
-

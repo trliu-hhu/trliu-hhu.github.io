@@ -1,10 +1,9 @@
 type = "card"
-title = "Teaching"
-description = "Courses I have taught or assisted with."
+title = "教学"
 
 [[items]]
-title = "Example Course"
-subtitle = "Teaching Assistant"
-date = "2024"
-content = "Description of the course and responsibilities. Content of this course can be found [here](https://example.com)."
-tags = ["Undergraduate", "CS"]
+title = "非线性系统"
+subtitle = "选修课"
+date = "2026"
+%content = "课程内容与职责简介。"
+tags = ["本科生", "控制理论与控制工程"]

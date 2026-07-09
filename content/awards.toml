@@ -1,27 +1,32 @@
 type = "card"
-title = "Awards"
-description = "Honors and awards I have received."
+title = "奖项"
+description = "我获得的荣誉与奖项。"
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
+title = "2025年度江苏省行业领域（电子信息领域）十大科技进展"
+date = "2026"
+content = "排名：4/7。"
+
+[[items]]
+title = "东南大学“优秀毕业研究生”"
+date = "2026"
+
+[[items]]
+title = "江苏瑞铁轨道奖学金"
 date = "2025"
-content = "Description of the award."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
+title = "东南大学“学术创新先进个人”"
+date = "2025"
+
+[[items]]
+title = "博士研究生国家奖学金"
 date = "2024"
-content = "Description of the award."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
+title = "中国国家留学基金管理委员会（CSC）资助"
+date = "2024"
+
+[[items]]
+title = "东南大学“三好研究生”"
 date = "2023"
-content = "Description of the award."
-
-[[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2022"
-content = "Description of the award."
