@@ -5,5 +5,5 @@ title = "教学"
 title = "非线性系统"
 subtitle = "选修课"
 date = "2026"
-%content = "课程内容与职责简介。"
+# content = "课程内容与职责简介。"
 tags = ["本科生", "控制理论与控制工程"]

@@ -1,6 +1,6 @@
 type = "card"
 title = "学术兼职"
-%description = "专业服务与社区参与。"
+# description = "专业服务与社区参与。"
 
 [[items]]
 title = "分会共同主席"
