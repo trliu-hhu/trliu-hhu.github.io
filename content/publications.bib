@@ -9,10 +9,12 @@
   pages={1-12},
   doi={10.1109/TAC.2026.3669444},
   abstract = {This paper investigates the formation tracking problem with uncertain time-varying exosystem over a general directed graph. The exosystem describes both the moving target and the disturbances affecting each agent. The dynamics of each agent is described by a parametric strict-feedback form subject to orbit constraints. The so-called congelation of variables method is employed in a hierarchical design to yield an adaptive formation estimator and an adaptive tracking controller. An adaptive coupling gain is integrated into the estimator design, which utilizes the local estimated states and is independent of the communication graph. Boundedness and convergence properties of the resulting adaptive systems are proven. Two simulation results are provided to show the effectiveness of the proposed estimator-controller scheme.},
+  preview={Liu2026TAC.png},
   description={Full Paper，控制领域顶级期刊}
 }
 
 @ARTICLE{Liu2026TVT,
+  selected={true},
   author={Liu, Tianrun and Ge, Xiaohua and Chen, Yang-Yang},
   journal={IEEE Transactions on Vehicular Technology}, 
   title={Path Planning and Platooning Control of Connected Automated Vehicles on Curved Roads}, 
@@ -22,7 +24,23 @@
   pages={1-12},
   doi={10.1109/TVT.2026.3665236},
   abstract = {This paper is concerned with the safe platooning of multiple connected automated vehicles on curved roads, ad dressing key challenges such as obstacle and collision avoidance, nonholonomic vehicle dynamics, and compensation for unknown time-varying flow fields. To achieve this, a joint path planning and platooning control approach is proposed to ensure smooth collision-free maneuvers along planned paths while adhering to safety constraints and overcoming the aforementioned challenges. First, a novel scaling-based path planning algorithm is introduced, leveraging obstacle information within an instantiated Gaussian model to re-plan safe paths and define robust safe regions, blue with seamless integration into the vehicle control system. Second, an adaptive nominal controller is developed to achieve precise longitudinal and lateral control objectives. Third, a safety-critical controller is formulated by incorporating control barrier functions into a minimally invasive quadratic programming framework. Finally, numerical experiments are conducted to validate the efficacy of the proposed approach.},
+  preview={Liu2026TVT.png},
   description={智能交通领域权威期刊}
+}
+
+@article{Liu2026AUTO,
+selected={true},
+title = {Congealed neural network design for uncertain nonlinear spatiotemporal control systems},
+journal = {Automatica},
+volume = {183},
+pages = {112636},
+year = {2026},
+month = jan,
+doi = {10.1016/j.automatica.2025.112636},
+author = {Tianrun Liu and Yang-Yang Chen and Xiaohua Ge},
+abstract = {This note is concerned with the approximation-based adaptive control problem for a class of uncertain nonlinear spatiotemporal systems. A congealed neural network (ConNN) is first proposed to approximate nonlinear spatiotemporal uncertainties arising from system states and time-varying parameters. Unlike conventional NN approximation structures, the ConNN explicitly decomposes the time-varying coupling weight into a congealed weight and a time-dependent perturbation. The congealed weight is estimated using a standard adaptive law for constant parameters, while the residual perturbation is handled within the network structure. To enhance robustness, smooth sliding-mode-like functions are then embedded into the control architecture, effectively attenuating bias terms, particularly in reference tracking scenarios. It is shown that the resulting ConNN-based adaptive controller guarantees adjustable, bounded-error tracking performance, thereby extending the applicability of robust adaptive control to complex spatiotemporal systems and outperforming existing NN-based approaches.},
+  preview={Liu2026AUTO.png},
+  description={控制领域顶级期刊}
 }
 
 
@@ -38,7 +56,8 @@
   pages={9129-9140},
   doi={10.1109/TAES.2025.3553459},
   abstract = {A critical challenge in missile guidance is the frequent inaccessibility of essential target information by on-board seekers. This article studies the 3-D cooperative guidance issue of multiple missiles simultaneously attacking an unknown maneuvering target. Different from most existing research, the pitch and yaw lead angles of a maneuvering target are entirely unknown, while the position and velocity information is only accessible to neighboring missiles. An adaptive distributed estimator is designed to estimate the target information over a directed communication network, generating a transmitted target with similar maneuverability to the actual target for each missile. Boundedness of the estimation errors are guaranteed within a prescribed time. Subsequently, a modified guidance law that integrates proportional navigation and coordination components is developed for simultaneously tracking the trajectories of the transmitted targets. The superiority of the developed adaptive cooperative estimation and guidance approach is confirmed through simulations.},
-description={A rigorous analysis of numerical stability boundaries for high-order Runge-Kutta integrators in the context of time-dependent quantum mechanics.}
+  preview={Liu2025TAES.png},
+  description = {航空航天领域权威期刊}
 }
 
 @ARTICLE{Liu2024MSMC,
@@ -52,11 +71,13 @@ description={A rigorous analysis of numerical stability boundaries for high-orde
   pages={52-60},
   doi={10.1109/MSMC.2024.3401404},
   abstract = {This article investigates the formation tracking problem for discrete-time uncertain spatiotemporal multiagent systems (MASs). Note that the common multiagent reinforcement learning (MARL) method requires the actions and states of all agents to train the centralized critic; hence, this method may be impractical in constrained communication. Therefore, a decentralized RL framework is proposed that combines a neural network boundary approximation distributed observer (NNBADO) and an intelligent nonaffine leader (INL). As a result, the formation tracking problem for each agent can be modeled as a partially observable Markov decision process (POMDP). A novel RL formation tracking algorithm is designed based on a fusion reward scheme synthesizing the orbit tracking and formation objectives. The experiment results show that our algorithm can improve the formation accuracy.},
+  preview={Liu2024MSMC.png},
   description = {}
 }
 
 
 @ARTICLE{Liu2024TFS,
+  selected={true},
   author={Liu, Tianrun and Chen, Yang-Yang and Wen, Guanghui},
   journal={IEEE Transactions on Fuzzy Systems}, 
   title={Multilayer Fuzzy Supremum Approximation to Discrete-Time Synchronization}, 
@@ -67,8 +88,37 @@ description={A rigorous analysis of numerical stability boundaries for high-orde
   pages={5201-5213},
   doi={10.1109/TFUZZ.2024.3417907},
   abstract = {Spatiality and temporality represent key features of the real world. A critical hurdle in the application of fuzzy logic systems lies in their limited capability to directly approximate the variables across spatial and temporal scales. This article investigates the fuzzy approximation problem of uncertain nonlinear spatiotemporal systems. A novel multilayer fuzzy supremum approximation (MFSA) is designed to map a spatiotemporal function to a state-based iterative supremum function by separating the time-varying parameters, which can be further approximated using the proposed fuzzy upremum approximation algorithm. It is indicated that MFSA is an effective approximation method for spatiotemporal functions as compared to the references. Subsequently, MFSA is developed into the leader–following synchronization problem of discrete-time multiagent systems. The MFSA-based observer and synchronization control schemes are designed by removing the assumption that either the leader's control input or the bound of the leader's control input is a known prior to each follower. The uniformly ultimate boundedness of the observer estimation errors and synchronization errors are achieved. The corresponding simulations indicate the efficacy of our approach.},
+  preview={Liu2024TFS.png},
   description = {人工智能领域权威期刊}
 }
 
+@article{Liu2023ND,
+  title = {A Novel Iterative Barrier Function Design for Discrete-Time Formation Tracking Control in Unknown Spatial Flowfields},
+  author = {Liu, Tianrun and Chen, Yang-Yang and Zhang, Ya and Zhang, Faxiang},
+  year = 2023,
+  month = oct,
+  journal = {Nonlinear Dynamics},
+  volume = {111},
+  number = {20},
+  pages = {19033--19045},
+  doi = {10.1007/s11071-023-08884-y},
+  abstract = {This paper addresses the formation tracking control problem for discrete-time first-order agents moving along superellipse orbits in the presence of unknown spatial flowfields. Note that there are position constraints by using the geometric extension method. A novel iterative barrier function is designed for path following. To avoid the complex calculation of arc-lengths in formation along orbits, a so-called circular diffeomorphism is used to map each superellipse to a circle, and then the linear function of chord is used to describe the formation. Adaptive neural networks along the horizontal and longitudinal directions are designed to achieve path following and formation with unknown flowfields, respectively. A uniformly ultimately bounded result is given under directed leader-following topologies. Simulations are provided to verify the effectiveness of the proposed algorithm.},
+  preview={Liu2023ND.png},
+  description = {}
+}
 
+@article{Liu2022JFI,
+  title = {Discrete-Time Formation Tracking Control for First-Order Agents along Skewed Superellipses},
+  author = {Liu, Tianrun and Chen, Yang-Yang and Zhang, Ya},
+  year = 2022,
+  month = may,
+  journal = {Journal of the Franklin Institute},
+  volume = {359},
+  number = {7},
+  pages = {3148--3163},
+  doi = {10.1016/j.jfranklin.2022.02.020},
+  abstract = {This article addresses the discrete-time formation tracking control problem along skewed superellipses of first-order vehicles under undirected and directed networks. For undirected cases, a novel iterative algorithm for skewed superellipses is designed according to the P-like design and Newton’s method. For directed cases, the PD-like design is used to the iterative algorithm. The conditions of control gains for the asymptotic properties in the Lyapunov sense are studied in detail. Furthermore, the explicit expressions of discrete-time formation tracking control laws are given for circular orbits, that is, a simple case of skewed superellipses. Simulation results are given to proof the effectiveness of the proposed method.},
+  preview={Liu2022JFI.png},
+  description = {}
+}
 
