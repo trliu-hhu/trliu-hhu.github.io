@@ -74,16 +74,16 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                                 </ReactMarkdown>
                             </div>
                         )}
-                        {(item as any).image && (
-                            <div className="mb-4 relative w-full h-48 md:h-64 rounded-lg overflow-hidden border border-neutral-100 dark:border-neutral-700">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img 
-                                    src={(item as any).image} 
-                                    alt={item.title} 
-                                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
-                                />
-                            </div>
-                        )}
+                        {(item as { image?: string }).image && (
+    				<div className="mb-4 relative w-full h-48 md:h-64 rounded-lg overflow-hidden border border-neutral-100 dark:border-neutral-700">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img 
+            src={(item as { image?: string }).image} 
+            alt={item.title} 
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+        />
+    </div>
+)}
                         {item.tags && (
                             <div className="flex flex-wrap gap-2 mt-4">
                                 {item.tags.map(tag => (

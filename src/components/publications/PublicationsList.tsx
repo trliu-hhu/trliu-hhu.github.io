@@ -20,7 +20,7 @@ import FormattedBibTeXText from './FormattedBibTeXText';
 // ==========================================
 // 新增的 BibTeX 自动化格式与清洗函数
 // ==========================================
-function formatAndCleanBibtex(pub: any): string {
+function formatAndCleanBibtex(pub: publication): string {
     if (!pub || !pub.bibtex) return '';
 
     // 1. 定义你期望的完美展示顺序（根据学术规范，剔除了 abstract）
@@ -39,7 +39,7 @@ function formatAndCleanBibtex(pub: any): string {
     ];
 
     try {
-        let raw = pub.bibtex.trim();
+        const raw = pub.bibtex.trim();
         
         // 2. 提取头部 (例如: @article{Liu2026,)，兼容中间有空格的情况
         const headerMatch = raw.match(/^@[a-zA-Z]+\s*\{[^,]+,/);
@@ -48,7 +48,7 @@ function formatAndCleanBibtex(pub: any): string {
         const header = headerMatch[0];
         
         // 3. 剥离头部和尾部的 }，只处理中间纯粹的字段内容
-        let fieldsStr = raw.substring(header.length).replace(/}\s*$/, '').trim();
+        const fieldsStr = raw.substring(header.length).replace(/}\s*$/, '').trim();
         
         // 4. 更强大的正则：不再依赖换行符，精准锁定 key = value
         const fieldRegex = /([a-zA-Z0-9_:-]+)\s*=\s*(\{[\s\S]*?\}|"[^"]*"|[^,}]+)/g;
@@ -87,7 +87,7 @@ function formatAndCleanBibtex(pub: any): string {
 
         // 6. 完美拼接头部、字段和尾部的大括号
         return `${header}\n${orderedLines.join(',\n')}\n}`;
-    } catch (e) {
+    } catch {
         // 发生任何解析异常时，安全降级
         return pub.bibtex;
     }
