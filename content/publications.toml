@@ -1,4 +1,7 @@
 type = "publication"
 title = "论文"
-description = "我的研究成果列表。"
+description = """
+我的研究成果列表。<br>
+更多论文见 <a href="https://scholar.google.com.hk/citations?user=MnvjhpcAAAAJ&hl=zh-CN" target="_blank" style="color: #3b82f6; text-decoration: underline;">Google Scholar</a>
+"""
 source = "publications.bib"
