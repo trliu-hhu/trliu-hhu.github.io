@@ -12,7 +12,8 @@ tags = ["本科生", "控制理论与控制工程"]
 
 [[items]]
 title = "💡 学生培养"
-subtitle = "欢迎有自动化、人工智能等专业背景的学生加入课题组！"
+subtitle = "欢迎有自动化、人工智能、智能科学与技术等专业背景的学生加入课题组！"
+content = "正在指导：24级本科生2人、25级本科生1人"
 
 [[items]]
 title = "Good general theory does not search for the maximum generality, but for the right generality."
