@@ -1,0 +1,81 @@
+[features]
+# Show a like button on the about page
+enable_likes = true
+
+# Display all subpages on a single page
+enable_one_page_mode = false
+
+[i18n]
+enabled = true
+locales = ["zh"]
+default_locale = "zh"
+
+[i18n.labels]
+zh = "中文"
+
+[site]
+title = "刘天润"
+description = "个人主页。"
+favicon = "/favicon.svg"
+last_updated = "2026年8月27日"
+
+[author]
+name = "刘天润"
+title = "讲师"
+institution = "河海大学，人工智能与自动化学院"
+avatar = "/bio.jpg"
+
+[social]
+email = "trliu@hhu.edu.cn"
+location = "城市，国家"
+location_url = "https://maps.google.com"
+location_details = [
+  "22号楼427室",
+  "河海大学常州校区"
+]
+google_scholar = "https://scholar.google.com/citations?user=MnvjhpcAAAAJ&hl=zh-CN"
+orcid = "https://orcid.org/0000-0002-2626-8617"
+
+
+[[navigation]]
+title = "关于我"
+type = "page"
+target = "about"
+href = "/"
+
+[[navigation]]
+title = "发表论文"
+type = "page"
+target = "publications"
+href = "/publications"
+
+[[navigation]]
+title = "科研项目"
+type = "page"
+target = "projects"
+href = "/projects"
+
+[[navigation]]
+title = "奖励荣誉"
+type = "page"
+target = "awards"
+href = "/awards"
+
+[[navigation]]
+title = "学术兼职"
+type = "page"
+target = "services"
+href = "/services"
+
+[[navigation]]
+title = "教学培养"
+type = "page"
+target = "teaching"
+href = "/teaching"
+
+
+# [[navigation]]
+# title = "简历"
+# type = "page"
+# target = "cv"
+# href = "/cv"
