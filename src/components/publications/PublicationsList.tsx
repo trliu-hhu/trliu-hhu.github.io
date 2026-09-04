@@ -133,6 +133,20 @@ export default function PublicationsList({ config, publications, embedded = fals
 
             return matchesSearch && matchesYear && matchesType;
         });
+	// 🌟 新增逻辑：如果是嵌在首页（embedded 为 true），则按照 bibtex 里的 weight 权重排序
+        if (embedded) {
+            result.sort((a, b) => {
+                const getWeight = (bibtex: string) => {
+                    if (!bibtex) return 999; // 如果没有 bibtex 源码，默认排到最后
+                    // 匹配 weight = {1} 或 weight = 1 等格式
+                    const match = bibtex.match(/weight\s*=\s*[{"]?(\d+)[}"]?/i);
+                    return match ? parseInt(match[1], 10) : 999; // 找不到权重的默认排最后
+                };
+                return getWeight(a.bibtex) - getWeight(b.bibtex);
+            });
+        }
+
+        return result;
     }, [publications, searchQuery, selectedYear, selectedType]);
 
     return (
