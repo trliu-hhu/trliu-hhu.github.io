@@ -119,9 +119,9 @@ export default function PublicationsList({ config, publications, embedded = fals
         return uniqueTypes.sort();
     }, [publications]);
 
-    // Filter publications
+    // Filter and Sort publications
     const filteredPublications = useMemo(() => {
-        return publications.filter(pub => {
+        const result = publications.filter(pub => {
             const matchesSearch =
                 pub.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 pub.authors.some(author => author.name.toLowerCase().includes(searchQuery.toLowerCase())) ||
@@ -133,21 +133,21 @@ export default function PublicationsList({ config, publications, embedded = fals
 
             return matchesSearch && matchesYear && matchesType;
         });
-	// 🌟 新增逻辑：如果是嵌在首页（embedded 为 true），则按照 bibtex 里的 weight 权重排序
+
+        // 🌟 如果是嵌在首页（embedded 为 true），则按照 bibtex 里的 weight 权重排序
         if (embedded) {
             result.sort((a, b) => {
-                const getWeight = (bibtex: string) => {
-                    if (!bibtex) return 999; // 如果没有 bibtex 源码，默认排到最后
-                    // 匹配 weight = {1} 或 weight = 1 等格式
+                const getWeight = (bibtex?: string) => {
+                    if (!bibtex) return 999;
                     const match = bibtex.match(/weight\s*=\s*[{"]?(\d+)[}"]?/i);
-                    return match ? parseInt(match[1], 10) : 999; // 找不到权重的默认排最后
+                    return match ? parseInt(match[1], 10) : 999;
                 };
                 return getWeight(a.bibtex) - getWeight(b.bibtex);
             });
         }
 
         return result;
-    }, [publications, searchQuery, selectedYear, selectedType]);
+    }, [publications, searchQuery, selectedYear, selectedType, embedded]);
 
     return (
         <motion.div
