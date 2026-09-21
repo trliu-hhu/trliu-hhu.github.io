@@ -3,6 +3,11 @@ title = "学术兼职"
 description = "我在学术组织的任职情况。"
 
 [[items]]
+title = "分论坛共同主席"
+content = "22th ‌Chinese Intelligent Systems Conference‌ (CISC 2026)"
+date = "2026"
+
+[[items]]
 title = "分会共同主席"
 content = "10th International Symposium on Computer Science and Intelligent Control (ISCSIC 2026)"
 date = "2026"
