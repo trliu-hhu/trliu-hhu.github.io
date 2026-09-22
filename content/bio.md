@@ -10,5 +10,5 @@
 
 
 
-担任国际会议ISCSIC 2026共同分会主席、IEEE PRMVAI 2026宣传主席、CISC 2026共同分论坛主席。长期担任JAS、TSMCA、TNNLS、TII、NN等多个国际顶级期刊及CDC、ACC等重要学术会议的审稿人。现为中国自动化学会（CAA）终身会员。
+担任国际会议CISC 2026分论坛共同主席、ISCSIC 2026分会共同主席、IEEE PRMVAI 2026宣传主席。长期担任JAS、TSMCA、TNNLS、TII、NN等多个国际顶级期刊及CDC、ACC等重要学术会议的审稿人。现为中国自动化学会（CAA）终身会员。
 
