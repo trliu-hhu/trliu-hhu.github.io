@@ -24,6 +24,10 @@ name = "刘天润"
 title = "讲师"
 institution = "河海大学，人工智能与自动化学院"
 avatar = "/bio22.jpg"
+avatars = [
+  "/bio22.jpg",
+  "/bio.jpg"
+]
 
 [social]
 email = "trliu@hhu.edu.cn"
