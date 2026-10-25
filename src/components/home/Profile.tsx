@@ -45,6 +45,25 @@ export default function Profile({ author, social, features, researchInterests }:
     const [isEmailPinned, setIsEmailPinned] = useState(false);
     const [lastClickedTooltip, setLastClickedTooltip] = useState<'email' | 'address' | null>(null);
 
+    // 整理需要展示的照片列表（优先使用 avatars 数组，若无则回退到单张 avatar）
+  const avatarList = author.avatars && author.avatars.length > 0
+    ? author.avatars
+    : [author.avatar];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // 自动滚动定时器：每 3.5 秒切换下一张，鼠标悬停在照片框上时暂停
+  useEffect(() => {
+    if (avatarList.length <= 1 || isPaused) return;
+
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % avatarList.length);
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, [avatarList.length, isPaused]);
+
     // Check local storage for user's like status
     useEffect(() => {
         if (!features.enable_likes) return;
@@ -111,16 +130,49 @@ export default function Profile({ author, social, features, researchInterests }:
             transition={{ duration: 0.6 }}
             className="sticky top-8"
         >
-            {/* Profile Image */}
-            <div className="w-64 h-64 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105">
-                <Image
-                    src={author.avatar}
-                    alt={author.name}
-                    width={256}
-                    height={256}
-                    className="w-full h-full object-cover object-[32%_center]"
-                    priority
-                />
+            {/* Profile Image Carousel */}
+            <div
+              className="w-64 h-64 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 relative group"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
+              {/* 横向滑动轨道 */}
+              <div
+                className="flex w-full h-full transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {avatarList.map((src, index) => (
+                  <div key={src} className="w-full h-full flex-shrink-0 relative">
+                    <Image
+                      src={src}
+                      alt={`${author.name} - ${index + 1}`}
+                      width={256}
+                      height={256}
+                      className="w-full h-full object-cover object-center"
+                      priority={index === 0}
+                    />
+                  </div>
+                ))}
+              </div>
+            
+              {/* 底部小圆点指示器（多于 1 张照片时显示） */}
+              {avatarList.length > 1 && (
+                <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-black/25 backdrop-blur-xs px-2.5 py-1 rounded-full">
+                  {avatarList.map((_, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      onClick={() => setCurrentSlide(index)}
+                      aria-label={`切换到第 ${index + 1} 张照片`}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${
+                        currentSlide === index
+                          ? 'w-4 bg-white'
+                          : 'w-1.5 bg-white/60 hover:bg-white/90'
+                      }`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Name and Title */}
