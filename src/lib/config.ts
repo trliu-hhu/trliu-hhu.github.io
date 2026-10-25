@@ -15,6 +15,7 @@ export interface SiteConfig {
     title: string;
     institution: string;
     avatar: string;
+    avatars?: string[]; // 新增：支持多张轮播照片
   };
   social: {
     email?: string;
