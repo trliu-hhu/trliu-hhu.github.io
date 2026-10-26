@@ -6,7 +6,7 @@
 
 
 
-近年来，以第一作者发表高水平学术论文9篇，包括国际控制领域顶级期刊IEEE Transactions on Automatic Control（长文）与Automatica，以及TFS、TAES、TVT等IEEE汇刊，授权国家发明专利1项。
+近年来，以第一作者发表学术论文9篇，包括国际控制领域顶级期刊IEEE Transactions on Automatic Control（长文）与Automatica，以及TFS、TAES、TVT等IEEE汇刊，授权国家发明专利1项。
 
 
 
