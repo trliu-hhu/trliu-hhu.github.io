@@ -14,7 +14,13 @@ import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
 import { Github, Linkedin, Pin } from 'lucide-react';
 import type { SiteConfig } from '@/lib/config';
 import { useMessages } from '@/lib/i18n/useMessages';
-import ScholarContact from './ScholarContact';
+
+// 手动维护谷歌学术累计指标。
+const scholarStats = {
+    citations: 100,
+    h_index: 7,
+    i10_index: 5,
+};
 
 // Custom ORCID icon component
 const OrcidIcon = ({ className }: { className?: string }) => (
@@ -43,6 +49,7 @@ export default function Profile({ author, social, features, researchInterests }:
     const [showAddress, setShowAddress] = useState(false);
     const [isAddressPinned, setIsAddressPinned] = useState(false);
     const [showEmail, setShowEmail] = useState(false);
+    const [showScholar, setShowScholar] = useState(false);
     const [isEmailPinned, setIsEmailPinned] = useState(false);
     const [lastClickedTooltip, setLastClickedTooltip] = useState<'email' | 'address' | 'scholar' | null>(null);
 
@@ -195,8 +202,61 @@ export default function Profile({ author, social, features, researchInterests }:
                 {socialLinks.map((link) => {
                     const IconComponent = link.icon;
                     if (link.isScholar) {
-                        return <ScholarContact key={link.name} href={link.href}
-                            onOpen={() => setLastClickedTooltip('scholar')} />;
+                        return (
+                            <div
+                                key={link.name}
+                                className={`relative ${showScholar ? 'z-30' : ''}`}
+                                onMouseEnter={() => {
+                                    setShowScholar(true);
+                                    setLastClickedTooltip('scholar');
+                                }}
+                                onMouseLeave={() => setShowScholar(false)}
+                                onFocus={() => {
+                                    setShowScholar(true);
+                                    setLastClickedTooltip('scholar');
+                                }}
+                                onBlur={event => {
+                                    if (!event.currentTarget.contains(event.relatedTarget)) setShowScholar(false);
+                                }}
+                                onKeyDown={event => {
+                                    if (event.key === 'Escape') setShowScholar(false);
+                                }}
+                            >
+                                <button
+                                    type="button"
+                                    aria-label="谷歌学术"
+                                    aria-expanded={showScholar}
+                                    aria-controls="scholar-contact-card"
+                                    className="p-2 sm:p-2 text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors duration-200"
+                                >
+                                    <AcademicCapIcon className="h-5 w-5" />
+                                </button>
+                                {showScholar && (
+                                    <div id="scholar-contact-card" className="absolute bottom-full left-1/2 -translate-x-1/2 pb-2 w-56 max-w-[calc(100vw-2rem)]">
+                                        <div className="relative bg-neutral-800 text-white px-4 py-3 rounded-lg text-sm font-medium shadow-lg">
+                                            <p className="text-center font-semibold mb-3">谷歌学术</p>
+                                            <dl className="space-y-2">
+                                                {([
+                                                    ['引用次数', scholarStats.citations],
+                                                    ['h 指数', scholarStats.h_index],
+                                                    ['i10 指数', scholarStats.i10_index],
+                                                ] as const).map(([label, value]) => (
+                                                    <div key={label} className="flex justify-between gap-6">
+                                                        <dt className="text-neutral-300">{label}</dt>
+                                                        <dd className="tabular-nums">{value.toLocaleString('zh-CN')}</dd>
+                                                    </div>
+                                                ))}
+                                            </dl>
+                                            <a href={link.href} target="_blank" rel="noopener noreferrer"
+                                                className="mt-3 flex justify-center bg-accent hover:bg-accent-dark text-white px-3 py-1 rounded-md text-xs transition-colors duration-200">
+                                                查看谷歌学术主页
+                                            </a>
+                                            <div className="absolute top-full left-1/2 -translate-x-1/2 border-l-4 border-r-4 border-t-4 border-transparent border-t-neutral-800" />
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        );
                     }
                     if (link.isLocation) {
                         return (
