@@ -14,6 +14,7 @@ import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
 import { Github, Linkedin, Pin } from 'lucide-react';
 import type { SiteConfig } from '@/lib/config';
 import { useMessages } from '@/lib/i18n/useMessages';
+import ScholarContact from './ScholarContact';
 
 // Custom ORCID icon component
 const OrcidIcon = ({ className }: { className?: string }) => (
@@ -43,7 +44,7 @@ export default function Profile({ author, social, features, researchInterests }:
     const [isAddressPinned, setIsAddressPinned] = useState(false);
     const [showEmail, setShowEmail] = useState(false);
     const [isEmailPinned, setIsEmailPinned] = useState(false);
-    const [lastClickedTooltip, setLastClickedTooltip] = useState<'email' | 'address' | null>(null);
+    const [lastClickedTooltip, setLastClickedTooltip] = useState<'email' | 'address' | 'scholar' | null>(null);
 
     // 整理需要展示的照片列表（优先使用 avatars 数组，若无则回退到单张 avatar）
   const avatarList = author.avatars && author.avatars.length > 0
@@ -105,6 +106,7 @@ export default function Profile({ author, social, features, researchInterests }:
             name: 'Google Scholar',
             href: social.google_scholar,
             icon: AcademicCapIcon,
+            isScholar: true,
         }] : []),
         ...(social.orcid ? [{
             name: 'ORCID',
@@ -192,6 +194,10 @@ export default function Profile({ author, social, features, researchInterests }:
             <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6 relative px-2">
                 {socialLinks.map((link) => {
                     const IconComponent = link.icon;
+                    if (link.isScholar) {
+                        return <ScholarContact key={link.name} href={link.href}
+                            onOpen={() => setLastClickedTooltip('scholar')} />;
+                    }
                     if (link.isLocation) {
                         return (
                             <div key={link.name} className="relative">
