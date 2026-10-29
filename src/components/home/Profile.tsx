@@ -237,7 +237,7 @@ export default function Profile({ author, social, features, researchInterests }:
                                             <p className="text-center font-semibold mb-3">谷歌学术</p>
                                             <dl className="space-y-2">
                                                 {([
-                                                    ['引用次数', scholarStats.citations],
+                                                    ['引用', scholarStats.citations],
                                                     ['h 指数', scholarStats.h_index],
                                                     ['i10 指数', scholarStats.i10_index],
                                                 ] as const).map(([label, value]) => (
